@@ -1,0 +1,15 @@
+{
+	"name": "SpotifyAutoSink",
+	"properties": {
+		"trustModeClaimForMi": {
+			"value": "Enabled",
+			"editable": true
+		}
+	},
+	"location": "centralindia",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "d7974445-b5ee-4de0-bcbd-b9ed46219a73",
+		"tenantId": "175e1ecb-58b7-4bd7-9b0b-db7027fb97e6"
+	}
+}
