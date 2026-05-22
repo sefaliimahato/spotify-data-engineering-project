@@ -44,10 +44,10 @@
 									"parameters": {
 										"container": "bronze",
 										"directory": {
-											"value": "@{item().table}_cdc",
+											"value": "@concat(item().table,'_cdc')",
 											"type": "Expression"
 										},
-										"filename": "dimuser_cdc"
+										"filename": "@concat(toLower(item().table),'_cdc.json')"
 									}
 								}
 							}
