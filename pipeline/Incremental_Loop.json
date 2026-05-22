@@ -98,7 +98,7 @@
 								"source": {
 									"type": "AzureSqlSource",
 									"sqlReaderQuery": {
-										"value": "@concat(\n'SELECT * FROM ',\nitem().schema,\n'.',\nitem().table,\n' WHERE ',\nitem().cdc_col,\n' > ''',\nif(\nempty(activity('lookup_cdc').output.firstRow.cdc),\n'1900-01-01 00:00:00',\nactivity('lookup_cdc').output.firstRow.cdc\n),\n''''\n)",
+										"value": "@concat(\n'SELECT * FROM ',\nitem().schema,\n'.',\nitem().table,\nif(\nempty(item().cdc_col),\n'',\nconcat(\n' WHERE ',\nitem().cdc_col,\n' > ''',\nif(\nempty(activity('lookup_cdc').output.firstRow.cdc),\n'1900-01-01 00:00:00',\nactivity('lookup_cdc').output.firstRow.cdc\n),\n''''\n)\n)\n)",
 										"type": "Expression"
 									},
 									"queryTimeout": "02:00:00",
