@@ -44,7 +44,7 @@
 									"parameters": {
 										"container": "bronze",
 										"directory": {
-											"value": "@concat(item().table,'_cdc')",
+											"value": "@concat(toLower(item().table),'_cdc')",
 											"type": "Expression"
 										},
 										"filename": "@concat(toLower(item().table),'_cdc.json')"
