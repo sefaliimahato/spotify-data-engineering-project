@@ -69,7 +69,7 @@
 						"parameters": {
 							"container": "bronze",
 							"directory": {
-								"value": "@pipeline().parameters.table",
+								"value": "@{pipeline().parameters.table}_Sink",
 								"type": "Expression"
 							},
 							"file": {
@@ -109,7 +109,10 @@
 						"type": "DatasetReference",
 						"parameters": {
 							"container": "bronze",
-							"directory": "cdc",
+							"directory": {
+								"value": "@{pipeline().parameters.table}_cdc",
+								"type": "Expression"
+							},
 							"filename": "dimuser_cdc"
 						}
 					}
@@ -274,7 +277,10 @@
 									"type": "DatasetReference",
 									"parameters": {
 										"container": "bronze",
-										"directory": "cdc",
+										"directory": {
+											"value": "@{pipeline().parameters.table}_cdc",
+											"type": "Expression"
+										},
 										"filename": "empty.json"
 									}
 								}
@@ -285,7 +291,10 @@
 									"type": "DatasetReference",
 									"parameters": {
 										"container": "bronze",
-										"directory": "cdc",
+										"directory": {
+											"value": "@{pipeline().parameters.table}_cdc",
+											"type": "Expression"
+										},
 										"filename": "dimuser_cdc"
 									}
 								}
