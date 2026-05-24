@@ -400,11 +400,11 @@
 						"parameters": {
 							"container": "bronze",
 							"directory": {
-								"value": "@pipeline().parameters.table",
+								"value": "DimDate_Sink",
 								"type": "Expression"
 							},
 							"file": {
-								"value": "@concat(pipeline().parameters.table,'_',variables('current'))",
+								"value": "DimDate.parquet",
 								"type": "Expression"
 							}
 						}
