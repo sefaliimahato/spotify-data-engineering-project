@@ -368,7 +368,7 @@
 						"type": "DatasetReference",
 						"parameters": {
 							"container": "bronze",
-							"directory": "DimDate",
+							"directory": "DimDate_Sink",
 							"file": "DimDate.parquet"
 						}
 					}
