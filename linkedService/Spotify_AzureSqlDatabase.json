@@ -1,0 +1,17 @@
+{
+	"name": "Spotify_AzureSqlDatabase",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "AzureSqlDatabase",
+		"typeProperties": {
+			"server": "spotifysql.database.windows.net",
+			"database": "spotifyazuredatabase",
+			"encrypt": "mandatory",
+			"trustServerCertificate": false,
+			"authenticationType": "SQL",
+			"userName": "adminsefu",
+			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIkRBVEFGQUNUT1JZQEQ5Q0VDRDNCLUM4Q0EtNDczOS05Rjg5LTdBMDk2NjQwNTM0RF8xNDgzYzQ3Ni0xNmQ1LTRkODQtYWY5OC01NDc4ODYyZmNiODEiDQp9"
+		}
+	}
+}
