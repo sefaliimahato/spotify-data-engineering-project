@@ -110,10 +110,13 @@
 						"parameters": {
 							"container": "bronze",
 							"directory": {
-								"value": "@{pipeline().parameters.table}_cdc",
+								"value": "@concat(toLower(pipeline().parameters.table),'_cdc')",
 								"type": "Expression"
 							},
-							"filename": "dimuser_cdc"
+							"filename": {
+								"value": "@concat(toLower(pipeline().parameters.table),'_cdc.json')",
+								"type": "Expression"
+							}
 						}
 					}
 				}
