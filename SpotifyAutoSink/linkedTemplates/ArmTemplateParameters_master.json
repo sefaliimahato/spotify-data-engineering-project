@@ -1,0 +1,33 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "SpotifyAutoSink"
+		},
+		"Spotify_AzureSqlDatabase_password": {
+			"value": ""
+		},
+		"Spotify_DataLakeStorage_accountKey": {
+			"value": ""
+		},
+		"Spotify_AzureSqlDatabase_properties_typeProperties_server": {
+			"value": "spotifysql.database.windows.net"
+		},
+		"Spotify_AzureSqlDatabase_properties_typeProperties_database": {
+			"value": "spotifyazuredatabase"
+		},
+		"Spotify_AzureSqlDatabase_properties_typeProperties_userName": {
+			"value": "adminsefu"
+		},
+		"Spotify_DataLakeStorage_properties_typeProperties_url": {
+			"value": "https://spotifyazaccount.dfs.core.windows.net/"
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}
