@@ -244,7 +244,7 @@
 									"type": "JsonSource",
 									"additionalColumns": [
 										{
-											"name": "dimuser_cdc",
+											"name": "cdc",
 											"value": {
 												"value": "@activity('max_cdc').output.resultSets[0].rows[0].cdc",
 												"type": "Expression"
