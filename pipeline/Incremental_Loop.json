@@ -317,6 +317,62 @@
 						}
 					]
 				}
+			},
+			{
+				"name": "copy_dimdate_full_load",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "AzureSqlSource",
+						"sqlReaderQuery": "SELECT * FROM dbo.DimDate",
+						"queryTimeout": "02:00:00",
+						"partitionOption": "None"
+					},
+					"sink": {
+						"type": "ParquetSink",
+						"storeSettings": {
+							"type": "AzureBlobFSWriteSettings"
+						},
+						"formatSettings": {
+							"type": "ParquetWriteSettings"
+						}
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "Azure_Sql",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "Parquet_dynamic",
+						"type": "DatasetReference",
+						"parameters": {
+							"container": "bronze",
+							"directory": "DimDate",
+							"file": "DimDate.parquet"
+						}
+					}
+				]
 			}
 		],
 		"parameters": {
@@ -339,12 +395,6 @@
 						"schema": "dbo",
 						"table": "DimArtist",
 						"cdc_col": "updated_at",
-						"from_date": ""
-					},
-					{
-						"schema": "dbo",
-						"table": "DimDate",
-						"cdc_col": "",
 						"from_date": ""
 					},
 					{
