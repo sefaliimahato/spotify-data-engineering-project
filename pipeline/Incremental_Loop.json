@@ -5,8 +5,6 @@
 			{
 				"name": "ForEach1",
 				"type": "ForEach",
-				"state": "Inactive",
-				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [],
 				"userProperties": [],
 				"typeProperties": {
@@ -258,7 +256,7 @@
 												"type": "JsonSource",
 												"additionalColumns": [
 													{
-														"name": "dimuser_cdc",
+														"name": "cdc",
 														"value": {
 															"value": "@activity('max_cdc').output.resultSets[0].rows[0].cdc",
 															"type": "Expression"
@@ -323,6 +321,8 @@
 			{
 				"name": "copy_dimdate_full_load",
 				"type": "Copy",
+				"state": "Inactive",
+				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [
 					{
 						"activity": "DeleteDimDateEmptyFile",
@@ -386,6 +386,8 @@
 			{
 				"name": "DeleteDimDateEmptyFile",
 				"type": "Delete",
+				"state": "Inactive",
+				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [],
 				"policy": {
 					"timeout": "0.12:00:00",
