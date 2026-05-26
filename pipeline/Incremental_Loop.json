@@ -323,7 +323,14 @@
 			{
 				"name": "copy_dimdate_full_load",
 				"type": "Copy",
-				"dependsOn": [],
+				"dependsOn": [
+					{
+						"activity": "DeleteDimDateEmptyFile",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
 				"policy": {
 					"timeout": "0.12:00:00",
 					"retry": 0,
@@ -379,14 +386,7 @@
 			{
 				"name": "DeleteDimDateEmptyFile",
 				"type": "Delete",
-				"dependsOn": [
-					{
-						"activity": "copy_dimdate_full_load",
-						"dependencyConditions": [
-							"Succeeded"
-						]
-					}
-				],
+				"dependsOn": [],
 				"policy": {
 					"timeout": "0.12:00:00",
 					"retry": 0,
